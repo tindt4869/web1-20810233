@@ -345,7 +345,7 @@
               action: "submit",
             })
             .then(async function (token) {
-              let response = await fetch("verify.php", {
+              let response = await fetch("api/verify.php", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
