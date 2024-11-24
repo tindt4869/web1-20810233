@@ -5,8 +5,7 @@ async function loadData(request, templateId, viewId) {
   const response = await fetch(`${API}/${request}`);
   const data = await response.json();
 
-  const source = document.getElementById(templateId).innerHTML;
-  const template = Handlebars.compile(source);
+  const template = Handlebars.templates[`${templateId}.hbs`];
   const context = { data };
   const view = document.getElementById(viewId);
   view.innerHTML = template(context);
