@@ -195,18 +195,24 @@
               required
             ></textarea>
           </div>
-          <div class="text-end">
-            <div class="form-check">
-              <label class="form-check-label" for="copy">
-                Send copy to yourself &nbsp;
-              </label>
-              <input type="checkbox" value="1" id="copy" />&nbsp;&nbsp;
-              <button type="submit" class="btn btn-primary">
-                Send Email to Us
-              </button>
+          <div class="row">
+            <div class="col">
+              <div id="response-message" class="text-info"></div>
+            </div>
+            <div class="col">
+              <div class="text-end">
+                <div class="form-check">
+                  <label class="form-check-label" for="copy">
+                    Send copy to yourself &nbsp;
+                  </label>
+                  <input type="checkbox" value="1" id="copy" />&nbsp;&nbsp;
+                  <button type="submit" class="btn btn-primary">
+                    Send Email to Us
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <div id="response-message" class="text-danger text-center"></div>
         </form>
       </div>
     </section>
@@ -357,15 +363,21 @@
               if (response.status === 200) {
                 sendMail();
               } else {
-                document.getElementById("response-message").innerHTML =
-                  "Error: Cannot verify RECAPTCHA";
+                let responseMessage =
+                  document.getElementById("response-message");
+                responseMessage.innerHTML = "Error: Cannot verify RECAPTCHA";
+                responseMessage.classList.remove();
+                responseMessage.classList.toggle("text-danger");
               }
             });
         });
       }
 
-      function sendEmail() {
-        document.getElementById("response-message").innerHTML = "OK";
+      function sendMail() {
+        let responseMessage = document.getElementById("response-message");
+        responseMessage.innerHTML = "OK";
+        responseMessage.classList.remove();
+        responseMessage.classList.toggle("text-info");
       }
     </script>
   </body>
