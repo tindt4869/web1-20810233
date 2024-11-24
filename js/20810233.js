@@ -24,7 +24,7 @@ async function getAuthenticationToken(username, password) {
 
   let result = await response.json();
 
-  if (result.status === 200) {
+  if (response.status === 200) {
     return result.token;
   }
 

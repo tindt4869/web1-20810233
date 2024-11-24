@@ -396,7 +396,7 @@
           });
 
           let result = await response.json();
-          if (result.status === 200) {
+          if (response.status === 200) {
             responseMessage.innerHTML = result.message;
             responseMessage.classList.remove();
             responseMessage.classList.toggle("text-success");
