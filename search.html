@@ -55,15 +55,15 @@
           </button>
           <div class="collapse navbar-collapse" id="menu-header">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link active" href="index.html" aria-current="page"
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" aria-current="page"
                   >Home <span class="visually-hidden">(current)</span></a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="gallery.html">Gallery</a>
               </li>
               <li class="nav-item">
@@ -112,131 +112,20 @@
       </nav>
     </header>
 
-    <div id="content">
-      <!-- Banner -->
-      <section class="container-fluid" id="banner">
-        <div class="container text-white text-center">
-          <div
-            id="carousel-banner"
-            class="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <ol class="carousel-indicators">
-              <li
-                data-bs-target="#carousel-banner"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="First slide"
-              >
-                <span>0</span>
-              </li>
-              <li
-                data-bs-target="#carousel-banner"
-                data-bs-slide-to="1"
-                aria-label="Second slide"
-              >
-                <span>1</span>
-              </li>
-              <li
-                data-bs-target="#carousel-banner"
-                data-bs-slide-to="2"
-                aria-label="Third slide"
-              >
-                <span>2</span>
-              </li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <h1>Web Developement<br />for everyone</h1>
-                <a
-                  href="gallery.html"
-                  class="btn text-bold text-uppercase text-white rounded-4 px-4"
-                  >see more</a
-                >
-              </div>
-              <div class="carousel-item">
-                <h1>20810233<br />Dương Thiện Tín</h1>
-              </div>
-              <div class="carousel-item">
-                <h1>Lập trình web1<br />Học kỳ - xxxx xxxx</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section id="banner-small"></section>
 
-      <!-- Products -->
-      <section class="container" id="products"></section>
-
-      <!-- About us -->
-      <section class="container-fluid" id="aboutus">
-        <div class="container">
-          <div class="row py-5">
-            <div class="col-lg-9 col-md-8 col-sm-12">
-              <h1 class="text-white">About us</h1>
-              <div class="text-black-50">
-                <img
-                  class="float-start me-3"
-                  src="images/icon-about.png"
-                  alt="About us"
-                />
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-                  explicabo iusto voluptas modi sint exercitationem quam
-                  cupiditate necessitatibus nihil in eaque distinctio, cum
-                  beatae perspiciatis totam officiis illo! Ratione, atque.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatum dignissimos impedit ducimus neque quam eos
-                  praesentium vitae voluptate vel reprehenderit?
-                  <a href="about.html" class="btn btn-link readmore"
-                    >Read more</a
-                  >
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-12">
-              <form
-                action="#"
-                id="formSignup"
-                class="border border-3 border-dark rounded-4 p-3 overflow-auto"
-              >
-                <h3 class="text-center text-white">Newsletter<br />Sign up</h3>
-                <p class="text-black-50 mb-2">Please, write an e-mail</p>
-                <input
-                  type="email"
-                  name="email_signup"
-                  id="email-signup"
-                  class="form-control mt-0 mb-2"
-                />
-                <button
-                  type="submit"
-                  class="btn btn-dark text-white float-end text-uppercase rounded-4 px-4"
-                >
-                  <h4 class="my-0">Sign up</h4>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- News -->
-      <section class="container py-5" id="news"></section>
-    </div>
+    <section class="container py-5" id="content"></section>
 
     <footer class="container-fluid text-center text-white py-3">
       <ul class="nav justify-content-center py-3" id="menu-footer">
         <li class="nav-item">
-          <a class="nav-link active" href="#" aria-current="page">Home</a>
+          <a class="nav-link" href="#" aria-current="page">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="gallery.html">Gallery</a>
+          <a class="nav-link active" href="gallery.html">Gallery</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="blogs.html">Blogs</a>
@@ -327,6 +216,14 @@
       </div>
     </div>
 
+    <!-- Optional: Place to the bottom of scripts -->
+    <script>
+      const myModal = new bootstrap.Modal(
+        document.getElementById("modalId"),
+        options
+      );
+    </script>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -340,89 +237,47 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Optional: Place to the bottom of scripts -->
-    <script>
-      const myModal = new bootstrap.Modal(
-        document.getElementById("modalId"),
-        options
-      );
-    </script>
-
     <!-- HandlebarJS -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="./js/20810233.js"></script>
 
-    <script id="products-template" type="text/x-handlebars-template">
-      <div class="row text-center py-5">
-        {{#each data}}
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img
-              src="{{imagepath}}"
-              alt="{{name}}"
-              onmouseover="setActiveImagepath(this, '{{imagepath}}')"
-              onmouseout="setActiveImagepath(this, '{{imagepath}}', false)"
-            />
-            <h3>{{name}}</h3>
-            <p class="text-black-50">{{summary}}</p>
-            <a
-              class="readmore btn btn-link pt-0"
-              href="#"
-              onclick="loadData('products/{{id}}', 'details-template', 'content')"
-            >Read more</a>
-          </div>
-        {{/each}}
-      </div>
-    </script>
-
-    <script id="news-template" type="text/x-handlebars-template">
-      <h1 class="text-black-10">News</h1>
-      <div class="row py-3">
-        {{#each data}}
-          <div class="col">
-            <div class="float-start me-3">
-              <div class="date text-white text-center rounded-4 py-1">
-                <h3>{{date}}</h3>
-              </div>
-              <a
-                href="#"
-                class="btn btn-link readmore ps-0"
-                onclick="loadData('news/{{id}}', 'details-template', 'content')"
-              >Read more</a>
-            </div>
-            <div>
-              <h3>{{name}}</h3>
-              <p class="text-black-50">{{summary}}</p>
-            </div>
-          </div>
-        {{/each}}
-      </div>
-    </script>
-
-    <script id="details-template" type="text/x-handlebars-template">
-      <section class="container-fluid" id="banner-small">
-      </section>
+    <script id="search-template" type="text/x-handlebars-template">
       {{#each data}}
-        <section class="container py-5">
-          <h1 class="pb-3">{{name}}</h1>
-          <div class="text-black-50">{{{description}}}</div>
-        </section>
+        <div class="py-3">
+          <a
+            class="text-decoration-none"
+            href="#"
+            onclick="loadData('{{type}}/{{id}}', 'details-template', 'content')"
+          ><h1 class="text-black">{{name}}</h1></a>
+          <div class="text-black-50">{{summary}}</div>
+        </div>
       {{/each}}
     </script>
 
-    <script src="./js/20810233.js"></script>
+    <script id="details-template" type="text/x-handlebars-template">
+      {{#each data}}
+        <h1>{{name}}</h1>
+        {{#if imagepath}}
+          <div class="clearfix">
+            <img src="{{imagepath}}" alt="{{name}}" class="float-start me-3" />
+          </div>
+        {{/if}}
+      {{/each}}
+    </script>
+
     <script>
       checkLogin();
-      loadData("products", "products-template", "products");
-      loadData("news", "news-template", "news");
 
-      function setActiveImagepath(img, imagepath, isActive = true) {
-        if (isActive) {
-          img.src = imagepath.replace(".", "-active.");
-        } else {
-          img.src = imagepath;
+      (async function () {
+        let searchParams = new URLSearchParams(location.search);
+        let keyword = searchParams.get("keyword");
+        if (keyword) {
+          keyword = keyword.trim();
+          if (keyword !== "") {
+            loadData(`search?keyword=${keyword}`, "search-template", "content");
+          }
         }
-
-        img.nextElementSibling.classList.toggle("web1-text-blue");
-      }
+      })();
     </script>
   </body>
 </html>
