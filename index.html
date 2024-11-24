@@ -365,8 +365,7 @@
             <p class="text-black-50">{{summary}}</p>
             <a
               class="readmore btn btn-link pt-0"
-              href="#"
-              onclick="loadData('products/{{id}}', 'details-template', 'content')"
+              href="?request=products/{{id}}"
             >Read more</a>
           </div>
         {{/each}}
@@ -383,9 +382,8 @@
                 <h3>{{date}}</h3>
               </div>
               <a
-                href="#"
+                href="?request=news/{{id}}"
                 class="btn btn-link readmore ps-0"
-                onclick="loadData('news/{{id}}', 'details-template', 'content')"
               >Read more</a>
             </div>
             <div>
@@ -410,9 +408,15 @@
 
     <script src="./js/20810233.js"></script>
     <script>
-      checkLogin();
-      loadData("products", "products-template", "products");
-      loadData("news", "news-template", "news");
+      let searchParams = new URLSearchParams(location.search);
+      let request = searchParams.get("request");
+      if (request) {
+        loadData(request, "details-template", "content");
+      } else {
+        checkLogin();
+        loadData("products", "products-template", "products");
+        loadData("news", "news-template", "news");
+      }
 
       function setActiveImagepath(img, imagepath, isActive = true) {
         if (isActive) {
